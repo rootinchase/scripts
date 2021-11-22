@@ -1,0 +1,155 @@
+{
+  "categories": [
+    {
+      "name": "Bash",
+      "config": [
+        {
+          "name": "Bashrc",
+          "file": "$XDG_CONFIG_HOME/bash/.bashrc"
+        }
+      ]
+    },
+    {
+      "name": "Configs",
+      "config": [
+        {
+          "name": "Config",
+          "file": "$XDG_CONFIG_HOME/config_list.json"
+        }
+      ]
+    },
+    {
+      "name": "I3WM",
+      "config": [
+        {
+          "name": "Base Keybinds",
+          "file": "$XDG_CONFIG_HOME/i3/config.keybinds.i3"
+        },
+        {
+          "name": "Programs Keybinds",
+          "file": "$XDG_CONFIG_HOME/i3/config.keybinds.programs"
+        },
+        {
+          "name": "Window Keybinds",
+          "file": "$XDG_CONFIG_HOME/i3/config.keybinds.windows"
+        },
+        {
+          "name": "Workspaces Keybinds",
+          "file": "$XDG_CONFIG_HOME/i3/config.keybinds.workspaces"
+        },
+        {
+          "name": "Resize Mode",
+          "file": "$XDG_CONFIG_HOME/i3/config.mode.resize"
+        },
+        {
+          "name": "Root Keybinds",
+          "file": "$XDG_CONFIG_HOME/i3/config.mode.root"
+        },
+        {
+          "name": "Workspaces",
+          "file": "$XDG_CONFIG_HOME/i3/config.workspaces"
+        },
+        {
+          "name": "Workspace Assignments",
+          "file": "$XDG_CONFIG_HOME/i3/config.workspaces.assign"
+        }
+      ]
+    },
+    {
+      "name": "Kitty",
+      "config": [
+        {
+          "name": "Kitty",
+          "file": "$XDG_CONFIG_HOME/kitty/kitty.conf"
+        }
+      ]
+    },
+    {
+      "name": "Neofetch",
+      "config": [
+        {
+          "name": "Neofetch",
+          "file": "$XDG_CONFIG_HOME/neofetch/config.conf"
+        }
+      ]
+    },
+    {
+      "name": "nnn",
+      "config": [
+        {
+          "name": "nnn",
+          "file": "$XDG_CONFIG_HOME/nnn/export.sh"
+        }
+      ]
+    },
+    {
+      "name": "Polybar",
+      "config": [
+        {
+          "name": "Base",
+          "file": "$XDG_CONFIG_HOME/polybar/confing"
+        },
+        {
+          "name": "Colors",
+          "file": "$XDG_CONFIG_HOME/polybar/colors"
+        },
+        {
+          "name": "Modules",
+          "file": "$XDG_CONFIG_HOME/polybar/modules"
+        }
+      ]
+    },
+    {
+      "name": "SSH",
+      "config": [
+        {
+          "name": "Authorized Keys",
+          "file": "~/.ssh/authorized_keys"
+        },
+        {
+          "name": "SSH Config",
+          "file": "~/.ssh/config"
+        }
+      ]
+    },
+    {
+      "name": "TMUX",
+      "config": [
+        {
+          "name": "TMUX",
+          "file": "$XDG_CONFIG_HOME/tmux/.tmux.conf.local"
+        }
+      ]
+    },
+    {
+      "name": "Vim",
+      "config": [
+        {
+          "name": "Vimrc",
+          "file": "$XDG_CONFIG_HOME/vim/vimrc"
+        }
+      ]
+    },
+    {
+      "name": "ZSH",
+      "config": [
+        {
+          "name": "Aliases",
+          "file": "$XDG_CONFIG_HOME/zsh/aliasrc"
+        },
+        {
+          "name": "Base",
+          "file": "$XDG_CONFIG_HOME/zsh/zshrc"
+        },
+        {
+          "name": "Functions",
+          "file": "$XDG_CONFIG_HOME/zsh/functionsrc"
+        },
+        {
+          "name": "Package Management",
+          "file": "$XDG_CONFIG_HOME/zsh/packagemgtrc"
+        }
+      ]
+    }
+  ]
+}
