@@ -1,6 +1,5 @@
 #!/bin/bash
 
-source /home/rootinchase/Github/scripts/common.sh
 
 # Terminate already running bar instances
 pkill polybar
@@ -23,4 +22,4 @@ then
 fi
 
 
-success "Polybar launched..."
+echo "Polybar launched..."

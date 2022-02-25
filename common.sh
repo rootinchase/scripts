@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 
 # Colors!
 # Reset
@@ -74,15 +74,15 @@ export ON_ICYAN='\033[0;106m'    # Cyan
 export ON_IWHITE='\033[0;107m'   # White
 
 function error() {
-    printf "(%sERROR%s) %s\n" "$RED" "$NC" "${*}"
+    printf "(%bERROR%b) %s\n" "$RED" "$NC" "$@"
 }
 
 function debug_msg() {
-    printf "(%sDEBUG%s) %s\n" "$YELLOW" "$NC" "${*}"
+    printf "(%bDEBUG%b) %s\n" "$YELLOW" "$NC" "$@"
 }
 
 function success() {
-    printf "(%sSuccess%s) %s\n" "$GREEN" "$NC" "${*}"
+    printf "(%bSuccess%b) %s\n" "$GREEN" "$NC" "$@"
 }
 
 function edit() {
@@ -92,16 +92,6 @@ function edit() {
   else
     file="$1"
     "$EDITOR" "$file"
-  fi
-}
-
-function is_xorg() {
-  if [ -n "$DISPLAY" ]; then
-    echo "set"
-    return 0
-  else
-    echo "unset"
-    return 1
   fi
 }
 
@@ -121,6 +111,7 @@ function cd_fail() {
 
   fi
 }
+
 function is_dmenu() {
   [[ -z "${TERM+set}" ]]
 }
@@ -136,6 +127,20 @@ function is_ssh() {
     esac
   fi
   [[ -n "${SESSION_TYPE+set}" ]]
+}
+
+function is_root() {
+    [ "$USER" == "root" ]
+}
+
+function is_xorg() {
+  if [ -n "$DISPLAY" ]; then
+    echo "set"
+    return 0
+  else
+    echo "unset"
+    return 1
+  fi
 }
 
 function run_in_terminal() {
