@@ -1,8 +1,8 @@
 #!/bin/bash
 
-prompt=$(printf "No \n Yes" | dmenu -i -p "Do you want to log out?")
+prompt=$(printf "No\nYes" | dmenu -i -p "Do you want to log out?")
 
 if [ "$prompt" == "Yes" ]
 then
-    i3_msg exit
+    i3-msg exit
 fi

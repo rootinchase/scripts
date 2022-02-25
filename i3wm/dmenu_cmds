@@ -1,6 +1,7 @@
 i3-msg exit
 ~/.config/polybar/launch.sh
-~/.config/i3/scripts/reload.sh
-~/.config/i3/scripts/hdmi-on.sh
-~/.config/i3/scripts/hdmi-off.sh
+~/.local/bin/i3-reload.sh
+~/.local/bin/hdmi-on.sh
+~/.local/bin/hdmi-off.sh
 pkill Discord
+~/.local/bin/config-search

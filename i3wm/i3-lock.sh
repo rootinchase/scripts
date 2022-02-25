@@ -10,6 +10,7 @@ function screen_off() {
 
 if [ "$1" == "-now" ]
 then
+    sleep 0.5
     screen_off
 fi
 lock

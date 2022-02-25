@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source /home/rootinchase/Github/scripts/common.sh
+source /home/rootinchase/.local/bin/rootin-common-functions
 
 # # #
 # Functions

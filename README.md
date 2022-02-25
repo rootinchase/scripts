@@ -16,13 +16,14 @@ dmenu-common.sh - runs common commands from a file
 
 hdmi-on.sh / hdmi-off.sh - Turns my HDMI monitor (my secondary) on and off
 
-launch.sh - My polybar launch script
 
-lock.sh - locks my screen and turns them off with the -now option
+i3-lock.sh - locks my screen and turns them off with the -now option
 
-logout.sh - uses dmenu to replicate the i3wm default logout
+i3-logout.sh - uses dmenu to replicate the i3wm default logout
 
-reload.sh - my pre 4.20 i3wm modular config script
+i3-reload.sh - my pre 4.20 i3wm modular config script
+
+polybar-launch.sh - My polybar launch script
 
 screenshot.sh - takes a screenshot and notifies
 
