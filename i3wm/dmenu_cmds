@@ -5,3 +5,6 @@ i3-msg exit
 ~/.local/bin/hdmi-off.sh
 pkill Discord
 ~/.local/bin/config-search
+xautolock -enable
+xautolock -disable
+\

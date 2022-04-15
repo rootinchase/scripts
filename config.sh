@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-source /home/rootinchase/.local/bin/rootin-common-functions
+# shellcheck source-path=~/.local/bin
+source rootin-common-functions
 
 # # #
 # Functions
@@ -8,6 +9,8 @@ source /home/rootinchase/.local/bin/rootin-common-functions
 function config_exists() {
   if [ ! -f "$conf" ]
   then
+    mkdir -p "$conf"
+    rmdir "$conf"
     touch "$conf"
     error "You must create the config first"
     edit "$conf"
@@ -22,6 +25,7 @@ function parse_index() {
 function selection() {
   selection=$(search "$1")
   index=$(parse_index "$selection" "$1")
+  printf "selection index is:%s" "$index"
   echo "$index"
 }
 
@@ -49,15 +53,17 @@ function list_files() {
     sel=0
 
   else
-    sel=$(( $( selection "$filenames" )-1))
+    s=$(selection "$filenames")
+    let "s--"
 
   fi
-  file=$(jq -r --argjson cat $cat --argjson sel $sel ".categories[$cat].config[$sel].file" "$conf")
+  printf "S=%s" $s
+  file=$(jq -r --argjson cat $cat --argjson sel $s ".categories[$cat].config[$sel].file" "$conf")
   final_file=$(eval echo "$file")
   edit "$final_file"
 }
 
-conf="$XDG_CONFIG_HOME/config_list.json"
+conf="$XDG_CONFIG_HOME/rootinchase/config_list.json"
 
 
 config_exists && list_categories
