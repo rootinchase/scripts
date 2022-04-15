@@ -14,7 +14,7 @@
       "config": [
         {
           "name": "Config",
-          "file": "$XDG_CONFIG_HOME/config_list.json"
+          "file": "$XDG_CONFIG_HOME/rootinchase/config_list.json"
         }
       ]
     },

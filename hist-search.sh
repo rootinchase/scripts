@@ -1,11 +1,15 @@
 #!/bin/bash
 
-hist_file=$(grep -i HISTFILE "$ZDOTDIR/.zshrc" | awk -F= '{print $2}')
+case $SHELL in
+    /usr/bin/zsh|/bin/zsh|/usr/bin/bash|/bin/bash)
+        hist_file=$(set | grep HISTFILE | awk -F= '{print $2}');;
+    *)
+        echo "unsupported shell"
+        exit 1;;
+esac
 
-new_hist=$(eval echo "$hist_file")
-
-command_run=$( tac "$new_hist" | fzf )
-
-echo "$command_run"
+# These one's break this, so I can't use them
+# shellcheck disable=2046,2116
+command_run=$( tac $(echo "$hist_file") | fzf )
 
 eval "$command_run"
