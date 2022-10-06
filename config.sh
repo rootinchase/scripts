@@ -18,14 +18,12 @@ function config_exists() {
 }
 
 function parse_index() {
-  index=$(echo "$2" | grep -n "$1" | cut -d : -f 1)
-  echo "$index"
+  echo $(echo "$2" | grep -n "$1" | cut -d: -f1)
 }
 
 function selection() {
   selection=$(search "$1")
   index=$(parse_index "$selection" "$1")
-  printf "selection index is:%s" "$index"
   echo "$index"
 }
 
@@ -43,24 +41,26 @@ function list_categories() {
 
 function list_files() {
   # $1 will be the index needed
-  cat=$(($1-1))
-  filenames=$(jq -r --argjson cat $cat ".categories[$cat].config[].name" "$conf")
+  cat=$1
+  ((cat--))
+  filenames=$(jq -r --argjson cat $cat ".categories[$cat].config[].name" "$conf") ||exit
 
   files=$(echo "$filenames" | wc -l)
 
   if [[ "$files" -eq 1 ]]
   then
     sel=0
-
   else
     s=$(selection "$filenames")
-    let "s--"
+    echo "raw $s"
+    ((s--))
 
   fi
-  printf "S=%s" $s
-  file=$(jq -r --argjson cat $cat --argjson sel $s ".categories[$cat].config[$sel].file" "$conf")
-  final_file=$(eval echo "$file")
+  echo $s
+  final_file=$(eval echo $(jq -r --argjson cat $cat --argjson s $s ".categories[$cat].config[$s].file" "$conf"))
+  echo "$final_file"
   edit "$final_file"
+
 }
 
 conf="$XDG_CONFIG_HOME/rootinchase/config_list.json"

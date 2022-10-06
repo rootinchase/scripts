@@ -101,7 +101,7 @@ function cd_fail() {
     # Is it read/writeable
     if [[ -w "$1" ]]
     then
-      error "Unknown faliure accessing $1"
+      error "Unknown failure accessing $1"
     else
       error "Directory $1, does not have write permissions"
     fi
