@@ -1,0 +1,10 @@
+./common.sh:rootin-common-functions
+./config.sh:config-search
+./env.sh:senv
+./i3wm/bar-launch.sh:bar-launch
+./i3wm/dmenu-common.sh:dmenu-common
+./i3wm/hdmi-off.sh:hdmi-off
+./i3wm/hdmi-on.sh:hdmi-on
+./i3wm/i3-lock.sh:i3-lock
+./i3wm/i3-reload.sh:i3-reload
+./i3wm/screenshot.sh:screenshot
