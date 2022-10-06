@@ -2,7 +2,7 @@
 
 case $SHELL in
     /usr/bin/zsh|/bin/zsh|/usr/bin/bash|/bin/bash)
-        hist_file=$(set | grep HISTFILE | awk -F= '{print $2}');;
+        hist_file=$(set | awk -F= '/HISTFILE/ {print $2}');;
     *)
         echo "unsupported shell"
         exit 1;;
