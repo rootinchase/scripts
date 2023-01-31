@@ -21,7 +21,8 @@ fi
 files=$(cat ./files.txt)
 pwd=$(pwd)
 
-for file in files
+for file in $files
 do
-    ln -s $pwd/$(echo $file | cut -d: -f1) $bin_folder/$(echo $file | cut -d: -f2)
+    ln -s "$pwd"/"$(echo "$file" | cut -d: -f1)" \
+        "$bin_folder"/"$(echo "$file" | cut -d: -f2)"
 done
