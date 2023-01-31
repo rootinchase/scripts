@@ -18,7 +18,7 @@ function config_exists() {
 }
 
 function parse_index() {
-  echo $(echo "$2" | grep -n "$1" | cut -d: -f1)
+  echo "$2" | grep -n "$1" | cut -d: -f1
 }
 
 function selection() {
@@ -43,22 +43,28 @@ function list_files() {
   # $1 will be the index needed
   cat=$1
   ((cat--))
-  filenames=$(jq -r --argjson cat $cat ".categories[$cat].config[].name" "$conf") ||exit
+  filenames=$(jq -r --argjson cat "$cat" ".categories[$cat].config[].name" "$conf") ||exit
 
   files=$(echo "$filenames" | wc -l)
 
   if [[ "$files" -eq 1 ]]
   then
-    sel=0
+    s=0
   else
     s=$(selection "$filenames")
     echo "raw $s"
     ((s--))
 
   fi
-  echo $s
-  final_file=$(eval echo $(jq -r --argjson cat $cat --argjson s $s ".categories[$cat].config[$s].file" "$conf"))
-  echo "$final_file"
+  if [[ "$DEBUG" == "true" ]]
+  then
+    echo "$s"
+  fi
+  final_file=$(eval echo "$(jq -r --argjson cat "$cat" --argjson s "$s" ".categories[$cat].config[$s].file" "$conf")")
+  if [[ "$DEBUG" == "true" ]]
+  then
+    echo "$final_file"
+  fi
   edit "$final_file"
 
 }

@@ -3,7 +3,7 @@
 
 # This compiles my i3 config into one file as required by it being a POS
 # (Yes, I'm mad at it)
-cd "$XDG_CONFIG_HOME"/i3
+cd "$XDG_CONFIG_HOME"/i3 || exit 1
 
 # Remove current config by deleting and creating a new file
 cp ./config ./config.bak
