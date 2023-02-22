@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function lock() {
-    i3lock -c 000000 -e -k --pass-media-keys --time-color=ffffff --date-color=ffffff
+    i3lock -c 000000 -e -k -f --radius 120 --pass-media-keys --pass-screen-keys --pass-power-keys --pass-volume-keys --date-str="%A, %b %d %Y" --time-color=AA0000 --date-color=ffffff
 }
 
 function screen_off() {
