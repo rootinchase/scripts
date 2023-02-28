@@ -12,7 +12,7 @@ lock
 
 if [ "$1" == "--now" ]
 then
-    sleep 0.5
+    sleep 1
     screen_off
 fi
 if [ "$1" == "--help" ]
