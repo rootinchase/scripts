@@ -1,0 +1,1 @@
+mysql-u root -p -e "CREATE DATABASE peppermint; CREATE USER '$1'@'10.21.0.%' IDENTIFIED BY "$2"; GRANT ALL PRIVILEGES ON $1.* TO '$1'@'10.21.0.%';"
